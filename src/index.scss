@@ -1,0 +1,34 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Open+Sans:ital,wght@1,300&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap');
+$bgColor:#131722;
+$lightBgColor:#24baef;
+$bgTransparent:rgba(36,186,239,.6) ;
+$fontColor:#fff;
+
+  body{
+    background-color: $bgColor;
+    font-family: 'Montserrat', sans-serif;
+    color: $fontColor;
+  }
+  nav{
+    .nav-link,a{
+      color: $fontColor !important;
+      transition: all .6s;
+    }
+    .nav-link:hover{
+      color: $lightBgColor !important;
+    }
+  }
+  
+ 
+  @media screen and (max-width:767px){
+   nav{
+    .navbar
+    {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+   }
+   
+  }

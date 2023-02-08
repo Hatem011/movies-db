@@ -1,0 +1,9 @@
+$borderColor:#a8a8a83d;
+$borderHeight:1px;
+.welcome{
+    .brdr
+    {
+        background-color: $borderColor;
+        height: $borderHeight;
+    }
+}
