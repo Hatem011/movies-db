@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
+
 export default function Movies() {
   let base_url="https://image.tmdb.org/t/p/w500/"
   let [moviesItems,setMoviesItems]=useState([]);
@@ -28,7 +29,10 @@ useEffect(() => {
   getMoviesItems(1)
 }, [])
   return (
+    
     <>
+    {moviesItems.length>0?
+    <div>
        <div className="row my-4">
         <div className="col-md-4">
         <div className="welcome">
@@ -42,7 +46,7 @@ useEffect(() => {
         </div>
         {moviesItems.map((movie)=>(
  <div key={movie.id} className="col-md-2">
- <div onClick={()=>gotTomovieDetails(movie.id)} className="movies-item">
+ <div onClick={()=>gotTomovieDetails(movie.id)} className="movies-item cursor-pointer">
   <img src={base_url+movie.poster_path} alt="" className='w-100' />
     <h2 className='h6'>{movie.title}</h2>
  </div>
@@ -60,7 +64,12 @@ useEffect(() => {
       }
   </ul>
 </nav>
- 
+</div>:<div className="text-center mt-5 text-primary">
+  <div className="spinner-grow" role="status">
+    <span className="visually-hidden">Loading...</span>
+  </div>
+</div>}
+  
     </>
   )
 }

@@ -72,7 +72,9 @@ setLoading(true)
   <label>Password</label>
   <input onChange={getInputsValues} type="password" name='password' className='form-control'/>
   <button className='btn btn-primary my-3 float-end'>
-    {loading?<i className='fa fa-spinner fa-spin'></i>:'Login'}
+    {loading? <div class="spinner-border spinner-border-sm text-white" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>:'Login'}
     </button>
 </form>
     </>

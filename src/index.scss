@@ -18,9 +18,25 @@ $fontColor:#fff;
     .nav-link:hover{
       color: $lightBgColor !important;
     }
+    .logout{
+      cursor: pointer;
+    }
+    ul{
+       i{
+cursor: pointer;
+      }
+      i:hover{
+        color: $lightBgColor ;
+      }
+    }
   }
-  
- 
+  .movies-item,.person-item,.tv-item{
+    cursor: pointer;
+}
+ .spinner-grow{
+  height: 5rem ;
+  width: 5rem ;
+ }
   @media screen and (max-width:767px){
    nav{
     .navbar

@@ -12,6 +12,7 @@ import PersonDetails from "../PersonDetails/PersonDetails"
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom"
 import jwtDecode from "jwt-decode"
 import { useEffect, useState } from "react"
+import TrendingContextProvider from "../../Context/Store"
 function App() {
 let [userData,setUserData]=useState(null)
 let navigate=useNavigate();
@@ -50,6 +51,7 @@ return props.children;
    <>
    <Navbar userData={userData} logout={logout}/>
    <div className="container">
+    <TrendingContextProvider>
    <Routes>
    <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>}></Route>
     <Route path="home" element={<ProtectedRoute> <Home/></ProtectedRoute>}></Route>
@@ -63,6 +65,7 @@ return props.children;
     <Route path="personDetails" element={<PersonDetails/>}></Route>
     <Route path="*" element={<NotFound/>}></Route>
    </Routes>
+   </TrendingContextProvider>
    </div>
    </>
   );

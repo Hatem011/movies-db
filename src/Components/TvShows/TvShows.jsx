@@ -29,7 +29,9 @@ useEffect(() => {
 
   return (
     <>
-         <div className="row  my-4">
+    {tvItems.length>0? 
+    <div>
+    <div className="row  my-4">
         <div className="col-md-4">
         <div className="welcome">
           <div className="brdr w-25 my-4"></div>
@@ -60,6 +62,13 @@ useEffect(() => {
       }
   </ul>
 </nav>
+    </div>:<div className="text-center mt-5 text-primary">
+  <div className="spinner-grow" role="status">
+    <span className="visually-hidden">Loading...</span>
+  </div>
+</div>}
+   
+   
     </>
   )
 }

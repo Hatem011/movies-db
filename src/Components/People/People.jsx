@@ -28,6 +28,7 @@ useEffect(() => {
 }, [])
   return (
     <>
+    {personItems.length>0?<div>
        <div className="row  my-4">
         <div className="col-md-4">
         <div className="welcome">
@@ -59,6 +60,12 @@ useEffect(() => {
       }
   </ul>
 </nav>
+</div>:<div className="text-center mt-5 text-primary">
+  <div className="spinner-grow" role="status">
+    <span className="visually-hidden">Loading...</span>
+  </div>
+</div>}
+    
     </>
   )
 }

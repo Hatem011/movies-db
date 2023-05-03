@@ -1,12 +1,9 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import "./Home.scss"
+import { trendingContext } from '../../Context/Store';
 export default function Home() {
-  let base_url="https://image.tmdb.org/t/p/w500/"
-     let [moviesItems,setMoviesItems]=useState([]);
-     let [tvItems,setTvItems]=useState([]);
-     let [personItems,setPersonItems]=useState([]);
+  let {base_url,moviesItems,tvItems,personItems}=useContext(trendingContext)
  let navigate=useNavigate();
        function gotTomovieDetails(id)
        {
@@ -29,18 +26,7 @@ function goToPersonDetails(id)
     search:`?id=${id}`
   })
 }
-    async function getItems(mediaType,callback)
-     {
-    let {data}=await axios.get(`https://api.themoviedb.org/3/trending/${mediaType}/day?api_key=c636ed7787cc302d96bf88ccf334e0d8`)
-    callback(data.results);
-    console.log(data.results);
-     }
 
-useEffect(() => {
-  getItems('movie',setMoviesItems)
-  getItems('tv',setTvItems)
-  getItems('person',setPersonItems)
-}, [])
 
   return (
     <>

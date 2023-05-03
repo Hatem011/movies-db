@@ -11,7 +11,7 @@ export default function Navbar(props) {
             <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="collapsibleNavId">
-        {props.userData?<ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        {props.userData?<ul className="navbar-nav me-auto mb-lg-0">
           <li className="nav-item">
             <Link className="nav-link" to='home'>Home</Link>
           </li>
@@ -20,13 +20,12 @@ export default function Navbar(props) {
           </li>
           <li className="nav-item">
             <Link className="nav-link" to='tvshows'>Tvshows</Link>
-          </li>
-          
+          </li>        
           <li className="nav-item">
             <Link className="nav-link"to='people'>People</Link>
           </li>
         </ul>:""}
-            <ul className="ul navbar-nav ms-auto mt-2 mt-lg-0">
+            <ul className="ul navbar-nav ms-auto mt-lg-0">
              <div className="social-icons d-flex align-items-center">
             <i className='fab fa-facebook px-1'></i>
             <i className='fab fa-twitter px-1'></i>
@@ -34,7 +33,7 @@ export default function Navbar(props) {
             </div>     
             {
             props.userData?<li className="nav-item">
-                   <a className="nav-link" onClick={props.logout}>Logout</a>
+                   <a className="nav-link logout" onClick={props.logout}>Logout</a>
                </li>
                :
                <>
